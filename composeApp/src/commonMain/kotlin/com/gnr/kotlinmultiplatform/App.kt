@@ -51,7 +51,9 @@ class SecondScreen : Screen {
         Column(
             modifier = Modifier.fillMaxSize().background(Color.Blue),
             verticalArrangement = Arrangement.SpaceAround
+            //CenterToAll
         ) {
+            //MejorarDiseño
             Text("SECOND SCREEN", fontSize = 32.sp, color = Color.White)
             //Spacer(Modifier.padding(16.dp))
             Button(onClick = {
