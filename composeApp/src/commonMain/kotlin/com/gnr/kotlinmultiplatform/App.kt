@@ -22,6 +22,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.transitions.SlideTransition
+import com.gnr.kotlinmultiplatform.BottomBar.BottomBarScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -43,6 +44,12 @@ class MainScreen : Screen {
                 navigator.push(SecondScreen())
             }) {
                 Text("Navegación básica", fontSize = 24.sp, color = Color.White)
+            }
+            Spacer(Modifier.height(16.dp))
+            Button(onClick = {
+                navigator.push(BottomBarScreen())
+            }) {
+                Text("Bottombar", fontSize = 24.sp, color = Color.White)
             }
         }
     }
