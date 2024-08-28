@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -50,19 +51,22 @@ class SecondScreen : Screen {
         val navigator = LocalNavigator.currentOrThrow
         Column(
             modifier = Modifier.fillMaxSize().background(Color.Blue),
-            verticalArrangement = Arrangement.SpaceAround
+            horizontalAlignment = Alignment.CenterHorizontally
             //CenterToAll
         ) {
             //MejorarDiseño
+            Spacer(Modifier.height(16.dp))
             Text("SECOND SCREEN", fontSize = 32.sp, color = Color.White)
-            //Spacer(Modifier.padding(16.dp))
-            Button(onClick = {
-                navigator.push(MainScreen())
-            }) {
-                Text("Back")
-            }
+            Spacer(Modifier.height(16.dp))
+            Button(onClick = { navigator.pop() }) { Text("Back") }
         }
     }
 
 }
+
+
+
+
+
+
 
