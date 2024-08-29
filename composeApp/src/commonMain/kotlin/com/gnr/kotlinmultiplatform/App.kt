@@ -23,6 +23,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.transitions.SlideTransition
 import com.gnr.kotlinmultiplatform.BottomBar.BottomBarScreen
+import com.gnr.kotlinmultiplatform.settings.ProfileScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -35,11 +36,14 @@ fun App() {
     }
 }
 
+
+
 class MainScreen : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(modifier = Modifier.weight(0.2f))
             Button(onClick = {
                 navigator.push(SecondScreen())
             }) {
@@ -51,6 +55,13 @@ class MainScreen : Screen {
             }) {
                 Text("Bottombar", fontSize = 24.sp, color = Color.White)
             }
+            Spacer(Modifier.height(16.dp))
+            Button(onClick = {
+                navigator.push(ProfileScreen())
+            }) {
+                Text("Navegación con persistencia", fontSize = 22.sp, color = Color.White)
+            }
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }

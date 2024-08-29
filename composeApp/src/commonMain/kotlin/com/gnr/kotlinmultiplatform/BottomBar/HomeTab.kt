@@ -33,7 +33,10 @@ object HomeTab : Tab {
 
     @Composable
     override fun Content() {
-        Box(Modifier.fillMaxSize().background(color = Color.Green), contentAlignment = Alignment.Center) {
+        Box(
+            Modifier.fillMaxSize().background(color = Color.Green),
+            contentAlignment = Alignment.Center
+        ) {
             Text("HomeScreen", fontSize = 22.sp, color = Color.Black)
         }
     }
