@@ -26,12 +26,15 @@ class ProfileResultScreen : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
+
         val isVip: Boolean = settings.getBoolean(KEY_VIP, false)
+
         val backgroundColor: Color = if (isVip) {
             Color.Yellow
         } else {
             Color.White
         }
+
         Column(
             modifier = Modifier.fillMaxSize().background(backgroundColor),
             horizontalAlignment = Alignment.CenterHorizontally
