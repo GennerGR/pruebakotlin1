@@ -5,7 +5,6 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonPrimitive
 
 object NetworkUtils {
     val httpClient = HttpClient {
@@ -13,6 +12,5 @@ object NetworkUtils {
             json(json = Json{ ignoreUnknownKeys = true}, contentType = ContentType.Any)
         }
     }
-
 }
 

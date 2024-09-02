@@ -40,7 +40,7 @@ class LoadScreen : Screen {
         val navigator = LocalNavigator.currentOrThrow
 
         var superheroName by remember { mutableStateOf("") }
-        var superheroList by remember {mutableStateOf<List<Hero>>(emptyList())}
+        var superheroList by remember { mutableStateOf<List<Hero>>(emptyList())}
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -53,8 +53,8 @@ class LoadScreen : Screen {
                     Text("Load")
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
             //List
+            Spacer(modifier = Modifier.height(16.dp))
             LazyColumn {
                 items(superheroList) { hero ->
                     Text(hero.name)
@@ -80,3 +80,5 @@ class LoadScreen : Screen {
         }
     }
 }
+
+
